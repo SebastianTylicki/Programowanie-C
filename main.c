@@ -1,137 +1,86 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-//1.3
-int zad31(int n1){
-    int x;
-    if(n1 < 0){
-        x = n1 *-1;
+
+int global = 0;
+
+void zad22(int n1){
+    scanf("%d",&n1);
+    int wynik = 1;
+    for(int i = 1; i <= n1; i++){
+        wynik = wynik * i;
+    }
+    printf("%d\n",wynik);
+}
+void zad24(int n2){
+    scanf("%d",&n2);
+    int wynik = 2;
+    if(n2 == 0){
+        printf("1\n");
+    }else if(n2 == 1){
+        printf("2\n");
     }else{
-     x=n1;
+    for(int i = 1; i < n2; i++){
+        wynik = 2 * wynik;
     }
-    return x;
+    printf("%d\n",wynik);
+    }
 }
-int zad32(int n2, int m2){
-    if(n2>= m2){
-        return n2;
+
+void zad28(int n3){
+    scanf("%d",&n3);
+    double wynik;
+    double tmp;
+    for(int i = 0; i<=n3; i++){
+        wynik = i*i;
+        if(wynik == n3){
+            printf("%d\n",i);
+        }
+    }
+}
+void zad212(int m4, int n4){
+    scanf("%d",&m4);
+    double tmp;
+    double wynik = 0;
+    double x = (1.0/m4);
+    if(m4 <= 1){
+        printf("Podana liczba jest mniejsza równa 1\n ");
     }else{
-        return m2;
+        scanf("%d",&n4);
+        for(int i = 0; i <= n4; i++){
+        tmp = pow(i,x);
+        wynik = wynik + tmp;
+        }
+        printf("%lf\n",wynik);
     }
 }
-int zad33(int n3, int m3, int k3){
-    if(n3 >= m3 && n3 >= k3){
-        return n3;
-    }else if(m3 >= n3 && m3 >= k3){
-        return m3;
-    }else{
-        return k3;
-    }
+void zad217(int global){
+    global = global + 1;
+    printf("Liczba wywolan = %d \n",global);
 }
-int zad34(int n4, int m4){
-    int x= abs(n4);
-    int y= abs(m4);
-    if(x >= y){
-        return n4;
-    }else
-        return m4;
-}
-void zad37(int a, int b, int c){
-    int delta = (b*b)-4*a*c;
-    int pierwiastek = sqrt(delta);
-    int x1,x2;
-    if(pierwiastek < 0){
-        printf("Nie ma rozwiazan\n");
-    }else if( pierwiastek == 0){
-        x1 = -b/(2*a);
-        printf("%d x0 = ",x1);
-        printf("\n");
-    }else{
-        x1 = (-b-pierwiastek)/(2*a);
-        printf("%d x1 = ",x1);
-        printf("\n");
-        x1 = (-b+pierwiastek)/(2*a);
-        printf("%d x2 = ",x2);
-        printf("\n");
-    }
-}
-//1.4
-void zad41(int nn, int mm){
-    for(int i=nn; i < mm; i +=nn){
-        printf("%d\n",i);
-    }
-}
-void zad42(int nn2, int mm2){
-    int wynik;
-    for(int i =1; i <= mm2; i++){
-        wynik = i*nn2;
-        printf("%d\n",wynik);
-    }
-}
-void zad43(int nn3, int mm3, int kk3){
-    int wynik;
-    for(int i =1; i <= mm3; i++){
-        wynik = i*nn3;
-    }
-    if(kk3 > wynik && wynik > mm3){
-        printf("%d\n",wynik);
-    }
-}
+// 2.2 / 2.4 / 2.8 / 2.12 / 2.17 / 2.20 / 2.24 / 2.29
 int main()
 {
-    //1.3
-    printf("Zadanie 1.3.1\n");
-    int n1;
-    scanf("%d",&n1);
-    int zadd31 = zad31(n1);
-    printf("%d\n",zadd31);
+    printf("Zadanie 2.2.2\n");
+    unsigned int n1;
+    zad22(n1);
 
-    printf("Zadanie 1.3.2\n");
-    int n2, m2;
-    scanf("%d",&n2);
-    scanf("%d",&m2);
-    int zadd32 = zad32(n2,m2);
-    printf("%d\n",zadd32);
+    printf("Zadanie 2.2.4\n");
+    unsigned int n2;
+    zad24(n2);
 
-    printf("Zadanie 1.3.3\n");
-    int n3, m3 ,k3;
-    scanf("%d",&n3);
-    scanf("%d",&m3);
-    scanf("%d",&k3);
-    int zadd33 = zad33(n3,m3,k3);
-    printf("%d\n",zadd33);
+    printf("Zadanie 2.2.8\n");
+    unsigned int n3;
+    zad28(n3);
 
-    printf("Zadanie 1.3.4\n");
-    int n4, m4;
-    scanf("%d",&n4);
-    scanf("%d",&m4);
-    int zadd34 = zad32(n4,m4);
-    printf("%d\n",zadd34);
+    printf("Zadanie 2.2.12\n");
+    unsigned int n4;
+    unsigned int m4;
+    zad212(m4,n4);
 
-    printf("Zadanie 1.3.7\n");
-    int a,b,c;
-    scanf("%d",&a);
-    scanf("%d",&b);
-    scanf("%d",&c);
-    zad37(a,b,c);
+    printf("Zadanie 2.2.17\n");
+    zad217(global);
+    zad217(global);
 
-    //1.4
-    printf("Zadanie 1.4.1\n");
-    int nn, mm;
-    scanf("%d",&nn);
-    scanf("%d",&mm);
-    zad41(nn,mm);
-
-    printf("Zadanie 1.4.2\n");
-    int nn2, mm2;
-    scanf("%d",&nn2);
-    scanf("%d",&mm2);
-    zad42(nn2,mm2);
-
-    printf("Zadanie 1.4.3\n");
-    int nn3, mm3, kk3;
-    scanf("%d",&nn3);
-    scanf("%d",&mm3);
-    scanf("%d",&kk3);
-    zad43(nn3,mm3,kk3);
     return 0;
 }
