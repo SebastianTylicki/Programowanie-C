@@ -143,6 +143,30 @@ void zad26(int n, int *w){
     n = *w;
     printf("%d\n%d\n",n,*w);
 }
+int * zad29(){
+    return malloc(sizeof(int));
+}
+void z29(){
+    printf("Zadanie 3.2.9\n");
+    printf("%d\n",zad29());
+}
+int * zad211(unsigned int n){
+    return malloc(n*sizeof(int));
+}
+void z211(){
+    printf("Zadanie 3.2.11\n");
+    int n;
+    scanf("%d",&n);
+    printf("%d\n",zad211(n));
+}
+void zad216(int const * a, int * const b){
+    *b=*a;
+}
+void z216(){
+    printf("Zadanie 3.2.16");
+    const int a = 5, b = 7;
+    zad216(a,b);
+}
 // 3.2.1 / 3.2.2 / 3.2.4 / 3.2.6 / 3.2.9 / 3.2.11 / 3.2.12 / 3.2.16
 int main()
 {
@@ -150,5 +174,9 @@ int main()
     z22();
     z24();
     z26();
+    z29();
+    z211();
+    z216();
     return 0;
 }
+--------
