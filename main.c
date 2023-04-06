@@ -261,3 +261,240 @@ int main()
     return 0;
 }
 ---------
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+void zad421a(unsigned int n, int tab[]){
+    for(int i=0; i<n;i++){
+        tab[i]=0;
+        printf("%d\n",tab[i]);
+    }
+}
+void zad421b(unsigned int n, int tab[]){
+    for(int i=0; i<n;i++){
+        tab[i] = i;
+        printf("%d\n",tab[i]);
+    }
+}
+void zad421c(unsigned int n, int tab[]){
+    for(int i=0; i<n; i++){
+        tab[i] = tab[i] * 2;
+        printf("%d\n",tab[i]);
+    }
+}
+void zad421d(unsigned int n, int tab[]){
+    for(int i=0; i<n;i++){
+        tab[i] = abs(tab[i]);
+        printf("%d\n",tab[i]);
+    }
+}
+void z421(){
+    int n = 10;
+    int tab[10] = {1, 2, -5, 4, 0, -2, 7, -3, 9, 5};
+    zad421a(n,tab);
+    zad421b(n,tab);
+    zad421c(n,tab);
+    zad421d(n,tab);
+}
+double zad424(int n, unsigned int tab[]){
+    double tmp = 1;
+    double z = 1.0/n;
+    for(int i=0;i<n;i++){
+        tmp = tmp * tab[i];
+    }
+    double x = pow(tmp,z);
+    printf("%lf\n",x);
+    return x;
+}
+void z424(){
+    int n = 5;
+    unsigned int tab[5] = {5, 2, 3, 1, 7};
+    zad424(n,tab);
+}
+void zad426a(int n, int tab1[], int tab2[]){
+    for(int i = 0; i<n;i++){
+        tab2[i] = tab1[i];
+        printf("%d\n",tab2[i]);
+    }
+}
+void zad426b(int n, int tab1[], int tab2[]){
+    int x = n-1;
+    for(int i =0; i<n;i++){
+        tab2[i] = tab1[x-i];
+        printf("%d\n",tab2[i]);
+    }
+}
+void z426(){
+    unsigned int n = 7;
+    int tab1[7] = {5, 1, 3, -6, -2, 8, 1};
+    int tab2[7];
+    zad426a(n,tab1,tab2);
+    zad426b(n,tab1,tab2);
+}
+void zad427a(int n, int tab1[], int tab2[], int tab3[]){
+    for(int i = 0; i<n;i++){
+        tab3[i] = tab1[i] + tab2[i];
+        printf("%d\n",tab3[i]);
+    }
+}
+void zad427b(int n, int tab1[], int tab2[], int tab3[]){
+    for(int i = 0;i<n;i++){
+        if(tab1[i] >= tab2[i]){
+            tab3[i] = tab1[i];
+        }else{
+            tab3[i] = tab2[i];
+        }
+        printf("%d\n",tab3[i]);
+    }
+}
+void zad427c(int n, int tab1[], int tab2[], int tab3[]){
+    int tmp[5];
+    for(int i=0;i<n;i++){
+        tmp[i]= tab1[i];
+        tab1[i] = tab3[i];
+        tab3[i] = tab2[i];
+        tab2[i] = tmp[i];
+    }
+
+}
+void z427(){
+    unsigned int n = 5;
+    int tab1[5] = {1, 2, 3, 4, -5};
+    int tab2[5] = {5, -4, -3, 2, 1};
+    int tab3[5] = {2, 4, -6, 8, 0};
+    zad427a(n,tab1,tab2,tab3);
+    zad427b(n,tab1,tab2,tab3);
+    zad427c(n,tab1,tab2,tab3);
+
+}
+int zad4210a(int n, int tab[]){
+    int x = tab[0];
+    for(int i = 1;i<n;i++){
+        if(tab[i]>x){
+            x = tab[i];
+        }
+    }
+    printf("%d\n",x);
+    return x;
+}
+int zad4210b(int n, int tab[]){
+    int x = tab[0];
+    for(int i = 1;i<n;i++){
+        if(tab[i]<x){
+            x = tab[i];
+        }
+    }
+    printf("%d\n",x);
+    return x;
+}
+int zad4210c(int n, int tab[]){
+    int x = tab[0];
+    int tmp;
+    for(int i = 1;i<n;i++){
+        if(tab[i]>x){
+            x = tab[i];
+            tmp = i;
+        }
+    }
+    printf("%d\n",tmp);
+    return tmp;
+}
+int zad4210d(int n, int tab[]){
+    int x = tab[0];
+    int tmp;
+    for(int i = 1;i<n;i++){
+        if(tab[i]<x){
+            x = tab[i];
+            tmp = i;
+        }
+    }
+    printf("%d\n",tmp);
+    return tmp;
+}
+int zad4210e(int n, int tab[]){
+    int x = abs(tab[0]);
+    for(int i = 1;i<n;i++){
+        if(abs(tab[i])>x){
+            x = abs(tab[i]);
+        }
+    }
+    printf("%d\n",x);
+    return x;
+}
+int zad4210f(int n, int tab[]){
+    int tmp;
+    int x = abs(tab[0]);
+    for(int i = 1;i<n;i++){
+        if(abs(tab[i])>x){
+            x = abs(tab[i]);
+            tmp = i;
+        }
+    }
+    printf("%d\n",tmp);
+    return tmp;
+}
+void z4210(){
+    unsigned int n = 4;
+    int tab[4] = {-1, 5, 2, -6};
+    zad4210a(n,tab);
+    zad4210b(n,tab);
+    zad4210c(n,tab);
+    zad4210d(n,tab);
+    zad4210e(n,tab);
+    zad4210f(n,tab);
+
+
+}
+void zad4212a(int n, int tab[]){
+    int tmp[5];
+    int x = n-1;
+    for(int i =0; i<n;i++){
+        tmp[i] = tab[x-i];
+    }
+    for(int i=0;i<n;i++){
+        tab[i]=tmp[i];
+        printf("%d\n",tab[i]);
+    }
+}
+void zad4212b(int n, int tab[]){
+    int x = tab[0];
+    for(int i =0;i<n-1;i++){
+        tab[i] = tab[i+1];
+        printf("%d\n",tab[i]);
+    }
+    tab[n-1]=x;
+    printf("%d\n",tab[n-1]);
+}
+void zad4212c(int n, int tab[]){
+    int x = tab[n-1];
+    for(int i =n-2;i>=0;i--){
+        tab[i+1]=tab[i];
+    }
+    tab[0] = x;
+    for(int i =0; i<n;i++){
+        printf("%d\n",tab[i]);
+    }
+}
+void z4212(){
+    unsigned int n = 5;
+    int tab[5] = {2, 7, -3, 4, -8};
+    zad4212a(n,tab);
+    zad4212b(n,tab);
+    zad4212c(n,tab);
+}
+// 4.2.1 / 4.2.4 / 4.2.6 / 4.2.7 / 4.2.10 / 4.2.12
+int main()
+{
+    z421();
+    z424();
+    z426();
+    z427();
+    z4210();
+    z4212();
+
+
+    return 0;
+}
+----------
