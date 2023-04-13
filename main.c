@@ -498,3 +498,40 @@ int main()
     return 0;
 }
 ----------
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+double * zad4214(unsigned int n){
+    double * tab = malloc(sizeof(double)*n);
+    return tab;
+}
+int * zad4219(int n, int tab[]){
+    int tmp = 0;
+    for (int i = 0; i<n; i++){
+        if(tab[i] != 0){
+            tmp++;
+        }
+    }
+    int * tab2 = malloc(tmp*sizeof(int));
+    int tmp2;
+    for(int i = 0; i < n; i++){
+        if(tab[i] != 0){
+            tab2[tmp2] = tab[i];
+            tmp2++;
+        }
+    }
+    return tab2;
+}
+double zad3213(int x){
+    return 1.0;
+}
+
+int main()
+{
+    int n = 5;
+    int tab[] = {1, 0, 5};
+    printf("%p",zad4219(n,tab));
+    
+    return 0;
+}
